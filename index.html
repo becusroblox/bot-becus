@@ -3,23 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mời Bot Discord</title>
+    <title>Becus Bot Hub - Mời Bot Discord</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #313338;
+            background: linear-gradient(135deg, #1e1f22 0%, #2b2d31 100%);
             color: #dbdee1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             min-height: 100vh;
             margin: 0;
             padding: 20px;
         }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
         h1 {
             color: #ffffff;
-            margin-bottom: 30px;
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        .brand-tag {
+            color: #5865F2;
+            font-size: 0.9rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 5px;
         }
         .bot-container {
             display: flex;
@@ -27,67 +42,131 @@
             gap: 20px;
             justify-content: center;
             max-width: 900px;
+            width: 100%;
         }
         .bot-card {
             background-color: #2b2d31;
-            padding: 20px;
-            border-radius: 8px;
-            width: 250px;
+            border: 1px solid #3f4147;
+            padding: 25px 20px;
+            border-radius: 12px;
+            width: 280px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .bot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(88, 101, 242, 0.3);
+            border-color: #5865F2;
+        }
+        .bot-avatar {
+            width: 70px;
+            height: 70px;
+            background-color: #1e1f22;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #5865F2;
+            border: 2px solid #5865F2;
         }
         .bot-card h2 {
             font-size: 1.2rem;
             color: #ffffff;
-            margin-top: 0;
+            margin: 0 0 10px 0;
+        }
+        .tags {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+        .tag {
+            background-color: #35363c;
+            color: #949ba4;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 10px;
         }
         .bot-card p {
             font-size: 0.9rem;
             color: #949ba4;
             min-height: 40px;
+            margin-bottom: 20px;
         }
         .btn {
             display: inline-block;
             background-color: #5865F2;
             color: white;
-            padding: 10px 20px;
+            padding: 10px 0;
+            width: 100%;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: bold;
-            transition: background 0.2s;
+            transition: background 0.2s, box-shadow 0.2s;
         }
         .btn:hover {
             background-color: #4752C4;
+            box-shadow: 0 0 10px rgba(88, 101, 242, 0.5);
+        }
+        footer {
+            margin-top: auto;
+            font-size: 0.8rem;
+            color: #6d6f78;
+            padding-top: 30px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Danh Sách Bot Discord</h1>
+    <header>
+        <h1>Danh Sách Bot Discord</h1>
+        <div class="brand-tag">Becus Bot Hub</div>
+    </header>
 
     <div class="bot-container">
         <!-- Bot 1 -->
         <div class="bot-card">
+            <div class="bot-avatar">🤖</div>
             <h2>Bot 1</h2>
+            <div class="tags">
+                <span class="tag">Utility</span>
+                <span class="tag">Fun</span>
+            </div>
             <p>Mô tả ngắn gọn chức năng của bot 1.</p>
             <a href="https://discord.com/oauth2/authorize?client_id=1543488614770417795&permissions=8&integration_type=0&scope=bot" class="btn" target="_blank">Thêm Bot</a>
         </div>
 
         <!-- Bot 2 -->
         <div class="bot-card">
+            <div class="bot-avatar">⚡</div>
             <h2>Bot 2</h2>
+            <div class="tags">
+                <span class="tag">Moderation</span>
+                <span class="tag">Tools</span>
+            </div>
             <p>Mô tả ngắn gọn chức năng của bot 2.</p>
             <a href="https://discord.com/oauth2/authorize?client_id=1545149071784677376&permissions=8&integration_type=0&scope=bot" class="btn" target="_blank">Thêm Bot</a>
         </div>
 
         <!-- Bot 3 -->
         <div class="bot-card">
+            <div class="bot-avatar">🔥</div>
             <h2>Bot 3</h2>
+            <div class="tags">
+                <span class="tag">Music</span>
+                <span class="tag">Media</span>
+            </div>
             <p>Mô tả ngắn gọn chức năng của bot 3.</p>
             <a href="https://discord.com/oauth2/authorize?client_id=1548293042660704337&permissions=8&integration_type=0&scope=bot" class="btn" target="_blank">Thêm Bot</a>
         </div>
     </div>
 
+    <footer>
+        &copy; 2026 Becus. All rights reserved.
+    </footer>
+
 </body>
-  </html>
-  
+</html>
