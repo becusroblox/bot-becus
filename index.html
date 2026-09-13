@@ -73,16 +73,30 @@
             height: 100%;
             object-fit: cover;
         }
+        @keyframes redGlowPulse {
+            0% {
+                color: #ff0000;
+                text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+            }
+            50% {
+                color: #222222;
+                text-shadow: 0 0 2px #000000;
+            }
+            100% {
+                color: #ff0000;
+                text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+            }
+        }
         .bot-card h2 {
             font-size: 1.3rem;
-            color: #ffffff;
             margin: 0 0 10px 0;
+            animation: redGlowPulse 2s infinite ease-in-out;
         }
         .bot-card p {
             font-size: 0.9rem;
             color: #949ba4;
-            min-height: 40px;
-            margin-bottom: 20px;
+            min-height: 35px;
+            margin-bottom: 12px;
         }
         .btn {
             display: inline-block;
@@ -111,7 +125,7 @@
 
     <header>
         <h1>Danh Sách Bot Discord</h1>
-        <div class="brand-tag">Càng Nhiều Bot Càng Mạnh</div>
+        <div class="brand-tag">CÀNG NHIỀU BOT CÀNG MẠNH</div>
     </header>
 
     <div class="bot-container">
@@ -120,8 +134,8 @@
             <div class="bot-avatar">
                 <img src="becus.png" alt="Becus Logo">
             </div>
-            <h2>Bot 1</h2>
-            <p>BOT WAR BY BECUS.</p>
+            <h2>BOT WAR 1</h2>
+            <p>/menu | becus!xangon .</p>
             <a href="https://discord.com/oauth2/authorize?client_id=1543488614770417795&permissions=8&integration_type=0&scope=bot" class="btn" target="_blank">Thêm Bot</a>
         </div>
 
@@ -130,8 +144,8 @@
             <div class="bot-avatar">
                 <img src="becus.png" alt="Becus Logo">
             </div>
-            <h2>Bot 2</h2>
-            <p>BOT WAR BY BECUS.</p>
+            <h2>BOT WAR 2</h2>
+            <p>/menu | becus!xangon.</p>
             <a href="https://discord.com/oauth2/authorize?client_id=1545149071784677376&permissions=8&integration_type=0&scope=bot" class="btn" target="_blank">Thêm Bot</a>
         </div>
 
@@ -140,14 +154,14 @@
             <div class="bot-avatar">
                 <img src="becus.png" alt="Becus Logo">
             </div>
-            <h2>Bot 3</h2>
-            <p>BOT WAR BY BECUS.</p>
+            <h2>BOT WAR 3</h2>
+            <p>/menu | becus!xangon.</p>
             <a href="https://discord.com/oauth2/authorize?client_id=1548293042660704337&permissions=8&integration_type=0&scope=bot" class="btn" target="_blank">Thêm Bot</a>
         </div>
     </div>
 
     <footer>
-        &copy; 2026 Becus. All rights reserved.
+        &copy; 2026 Becus. Lệnh War Cần Key Admin.
     </footer>
 
 </body>
