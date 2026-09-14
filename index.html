@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Becus War Bot Hub - Tactical System</title>
+    <title>Becus War Bot Hub</title>
     <style>
         * {
             box-sizing: border-box;
@@ -30,24 +30,8 @@
         }
         header {
             text-align: center;
-            margin-bottom: 20px;
-        }
-        .war-status {
-            background: rgba(255, 0, 0, 0.15);
-            border: 1px solid rgba(255, 0, 0, 0.6);
-            color: #ff3333;
-            font-size: 0.8rem;
-            font-family: monospace;
-            padding: 6px 16px;
-            border-radius: 4px;
-            margin-bottom: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            animation: electricTextFlicker 1.5s infinite;
-        }
-        @keyframes electricTextFlicker {
-            0%, 100% { text-shadow: 0 0 5px #ff0000; opacity: 0.9; }
-            50% { text-shadow: 0 0 15px #ff3333, 0 0 25px #ffffff; opacity: 1; }
+            margin-bottom: 30px;
+            margin-top: 10px;
         }
         h1 {
             color: #ffffff;
@@ -72,17 +56,6 @@
             justify-content: center;
             max-width: 900px;
             width: 100%;
-            margin-bottom: 20px;
-        }
-        @keyframes electricFlicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-                border-color: rgba(255, 0, 0, 0.35);
-                box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(255, 0, 0, 0.05);
-            }
-            20%, 24%, 55% {
-                border-color: #ff3333;
-                box-shadow: 0 0 35px #ff0000, 0 0 50px rgba(255, 0, 0, 0.8), inset 0 0 30px rgba(255, 0, 0, 0.4);
-            }
         }
         .bot-card {
             background-color: #121419;
@@ -92,7 +65,6 @@
             width: 280px;
             text-align: center;
             box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(255, 0, 0, 0.05);
-            animation: electricFlicker 3s infinite ease-in-out;
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -142,31 +114,11 @@
             box-shadow: 0 0 10px #23a55a;
             z-index: 2;
         }
-        @keyframes redGlowPulse {
-            0% {
-                color: #ff0000;
-                text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
-            }
-            50% {
-                color: #121212;
-                text-shadow: 0 0 2px #000000;
-            }
-            100% {
-                color: #ff0000;
-                text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
-            }
-        }
-        @keyframes glitchText {
-            0% { transform: translate(0); }
-            20% { transform: translate(-1px, 1px); text-shadow: 2px 0 #00ffff, -2px 0 #ff00ff; }
-            40% { transform: translate(1px, -1px); text-shadow: -2px 0 #00ffff, 2px 0 #ff00ff; }
-            60% { transform: translate(0); text-shadow: 0 0 12px #ff0000; }
-            100% { transform: translate(0); }
-        }
         .bot-card h2 {
             font-size: 1.3rem;
             margin: 0 0 8px 0;
-            animation: redGlowPulse 2s infinite ease-in-out, glitchText 4s infinite;
+            color: #ff0000;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
         }
         .bot-card p {
             font-size: 0.85rem;
@@ -207,7 +159,6 @@
 <body>
 
     <header>
-        <div class="war-status">LỆNH WAR CẦN KEY ADMIN</div>
         <h1>Danh Sách Bot Discord</h1>
         <div class="brand-tag">CÀNG NHIỀU BOT CÀNG MẠNH</div>
     </header>
@@ -220,7 +171,7 @@
                 <span class="online-dot"></span>
             </div>
             <h2>BOT WAR 1</h2>
-            <p>/menu | xem lệnh bot.</p>
+            <p>/menu | becus!xangon.</p>
             <a href="https://discord.com/oauth2/authorize?client_id=1543488614770417795&permissions=8&integration_type=0&scope=bot" class="btn" target="_blank">Thêm Bot</a>
         </div>
 
@@ -231,7 +182,7 @@
                 <span class="online-dot"></span>
             </div>
             <h2>BOT WAR 2</h2>
-            <p>/menu | xem lệnh bot.</p>
+            <p>/menu | becus!xangon.</p>
             <a href="https://discord.com/oauth2/authorize?client_id=1545149071784677376&permissions=8&integration_type=0&scope=bot" class="btn" target="_blank">Thêm Bot</a>
         </div>
 
@@ -242,7 +193,7 @@
                 <span class="online-dot"></span>
             </div>
             <h2>BOT WAR 3</h2>
-            <p>/menu | xem lệnh bot.</p>
+            <p>/menu | becus!xangon.</p>
             <a href="https://discord.com/oauth2/authorize?client_id=1548293042660704337&permissions=8&integration_type=0&scope=bot" class="btn" target="_blank">Thêm Bot</a>
         </div>
     </div>
