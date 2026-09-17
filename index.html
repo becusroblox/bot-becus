@@ -4,144 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Becus War Bot Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(rgba(8, 9, 12, 0.6), rgba(8, 9, 12, 0.75)), url('laudainhavua.jpg');
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, rgba(5, 6, 10, 0.85), rgba(12, 14, 20, 0.95)), url('laudainhavua.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: #dbdee1;
+            color: #f1f5f9;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            margin: 0;
-            padding: 20px;
+            padding: 40px 20px;
         }
         header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             z-index: 2;
         }
         .war-status {
-            background: rgba(40, 42, 48, 0.6);
-            border: 1px solid rgba(120, 125, 135, 0.4);
-            color: #b0b5bc;
-            font-size: 0.8rem;
-            font-family: monospace;
-            padding: 6px 16px;
-            border-radius: 4px;
-            margin-bottom: 12px;
-            letter-spacing: 2px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px);
         }
         h1 {
             color: #ffffff;
-            font-size: 1.8rem;
-            margin: 0;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-            letter-spacing: 1px;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
         .brand-tag {
-            color: #ffffff;
-            font-size: 0.9rem;
-            font-weight: bold;
-            letter-spacing: 3px;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            margin-top: 5px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
         .bot-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            max-width: 900px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
             width: 100%;
             z-index: 2;
         }
         .bot-card {
-            /* Card siêu trong suốt nhìn xuyên thấu ảnh nền, viền trắng */
-            background-color: rgba(15, 17, 22, 0.15);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            padding: 25px 20px;
-            border-radius: 12px;
-            width: 280px;
+            background: rgba(18, 20, 28, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 30px 20px;
+            border-radius: 16px;
             text-align: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-            overflow: hidden;
         }
         .bot-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
-            background-color: rgba(15, 17, 22, 0.3);
-            border-color: #ffffff;
+            transform: translateY(-8px);
+            background: rgba(24, 27, 38, 0.65);
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.05);
         }
         .bot-avatar {
-            position: relative;
-            width: 70px;
-            height: 70px;
+            width: 75px;
+            height: 75px;
             border-radius: 50%;
-            margin: 0 auto 15px auto;
-            border: 2px solid #ff0000;
-            background-color: #08090c;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+            margin: 0 auto 18px auto;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            background-color: #0b0c10;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
         .bot-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 50%;
         }
         .bot-card h2 {
-            font-size: 1.3rem;
-            margin: 0 0 8px 0;
-            color: #ff0000;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #ffffff;
+            letter-spacing: 0.5px;
         }
         .bot-card p {
             font-size: 0.85rem;
-            color: #d0d5dc;
-            min-height: 25px;
-            margin-bottom: 15px;
+            color: #94a3b8;
+            margin-bottom: 20px;
             font-family: monospace;
-            letter-spacing: 0.5px;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-        }
-        @keyframes energyFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
         .btn {
             display: inline-block;
-            background: linear-gradient(270deg, #ff0000, #990000, #ff3333, #660000);
-            background-size: 300% 300%;
-            animation: energyFlow 4s ease infinite;
-            color: white;
-            padding: 10px 0;
+            background: #ffffff;
+            color: #0f172a;
+            padding: 11px 0;
             width: 100%;
             text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            border: 1px solid #ff4d4d;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-            transition: transform 0.1s, box-shadow 0.2s;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
         }
         .btn:hover {
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
+            background: #f8fafc;
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
         }
         .btn:active {
-            transform: scale(0.96);
+            transform: scale(0.98);
         }
     </style>
 </head>
@@ -206,5 +195,4 @@
     </div>
 
 </body>
-        </html>
-    
+</html>
