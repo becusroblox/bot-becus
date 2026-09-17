@@ -33,13 +33,15 @@
             background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
             height: 1px;
         }
-        /* Hiệu ứng xoay tròn vòng vương miện */
-        @keyframes spinSlow {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        /* Hiệu ứng xoay 3D không gian trục Y riêng cho vương miện crown.png */
+        @keyframes crown3DSpin {
+            0% { transform: perspective(300px) rotateY(0deg); }
+            50% { transform: perspective(300px) rotateY(180deg); }
+            100% { transform: perspective(300px) rotateY(360deg); }
         }
-        .animate-spin-slow {
-            animation: spinSlow 10s linear infinite;
+        .animate-crown-3d {
+            animation: crown3DSpin 5s linear infinite;
+            transform-style: preserve-3d;
         }
     </style>
 </head>
@@ -71,11 +73,21 @@
         <div class="bg-black/40 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
             <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
             
-            <!-- Avatar với vòng vương miện vàng xoay tròn -->
-            <div class="relative w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                <div class="absolute inset-0 rounded-full border-2 border-dashed border-amber-400 animate-spin-slow shadow-[0_0_15px_rgba(212,175,55,0.6)]"></div>
-                <div class="w-16 h-16 rounded-full overflow-hidden border border-amber-300 bg-neutral-950 relative z-10 shadow-lg">
-                    <img src="vuongmieng.png" alt="Vuong Mieng Logo" class="w-full h-full object-cover">
+            <!-- Khu vực Avatar, Khung vòng gai & Vương miện 3D -->
+            <div class="relative w-24 h-24 mx-auto mb-4 flex items-center justify-center mt-6">
+                <!-- 1. Vương miện crown.png ở trên đầu, xoay 3D -->
+                <div class="absolute -top-8 z-30 w-16 h-16 flex items-center justify-center animate-crown-3d drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+                    <img src="crown.png" alt="Crown 3D" class="w-full h-full object-contain">
+                </div>
+                
+                <!-- 2. Avatar bên trong (vuongmieng.png) -->
+                <div class="w-13 h-13 rounded-full overflow-hidden bg-neutral-950 relative z-10 flex items-center justify-center shadow-inner">
+                    <img src="vuongmieng.png" alt="Avatar" class="w-full h-full object-cover">
+                </div>
+
+                <!-- 3. Khung vòng gai đứng yên (khungavt.png) trùm ra ngoài -->
+                <div class="absolute inset-0 z-20 w-full h-full flex items-center justify-center pointer-events-none">
+                    <img src="khungavt.png" alt="Avatar Frame" class="w-22 h-22 object-contain drop-shadow-[0_0_12px_rgba(0,0,0,0.9)]">
                 </div>
             </div>
 
@@ -90,10 +102,15 @@
         <div class="bg-black/40 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
             <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
             
-            <div class="relative w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                <div class="absolute inset-0 rounded-full border-2 border-dashed border-amber-400 animate-spin-slow shadow-[0_0_15px_rgba(212,175,55,0.6)]"></div>
-                <div class="w-16 h-16 rounded-full overflow-hidden border border-amber-300 bg-neutral-950 relative z-10 shadow-lg">
-                    <img src="vuongmieng.png" alt="Vuong Mieng Logo" class="w-full h-full object-cover">
+            <div class="relative w-24 h-24 mx-auto mb-4 flex items-center justify-center mt-6">
+                <div class="absolute -top-8 z-30 w-16 h-16 flex items-center justify-center animate-crown-3d drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+                    <img src="crown.png" alt="Crown 3D" class="w-full h-full object-contain">
+                </div>
+                <div class="w-13 h-13 rounded-full overflow-hidden bg-neutral-950 relative z-10 flex items-center justify-center shadow-inner">
+                    <img src="vuongmieng.png" alt="Avatar" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute inset-0 z-20 w-full h-full flex items-center justify-center pointer-events-none">
+                    <img src="khungavt.png" alt="Avatar Frame" class="w-22 h-22 object-contain drop-shadow-[0_0_12px_rgba(0,0,0,0.9)]">
                 </div>
             </div>
 
@@ -108,10 +125,15 @@
         <div class="bg-black/40 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
             <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
             
-            <div class="relative w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                <div class="absolute inset-0 rounded-full border-2 border-dashed border-amber-400 animate-spin-slow shadow-[0_0_15px_rgba(212,175,55,0.6)]"></div>
-                <div class="w-16 h-16 rounded-full overflow-hidden border border-amber-300 bg-neutral-950 relative z-10 shadow-lg">
-                    <img src="vuongmieng.png" alt="Vuong Mieng Logo" class="w-full h-full object-cover">
+            <div class="relative w-24 h-24 mx-auto mb-4 flex items-center justify-center mt-6">
+                <div class="absolute -top-8 z-30 w-16 h-16 flex items-center justify-center animate-crown-3d drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+                    <img src="crown.png" alt="Crown 3D" class="w-full h-full object-contain">
+                </div>
+                <div class="w-13 h-13 rounded-full overflow-hidden bg-neutral-950 relative z-10 flex items-center justify-center shadow-inner">
+                    <img src="vuongmieng.png" alt="Avatar" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute inset-0 z-20 w-full h-full flex items-center justify-center pointer-events-none">
+                    <img src="khungavt.png" alt="Avatar Frame" class="w-22 h-22 object-contain drop-shadow-[0_0_12px_rgba(0,0,0,0.9)]">
                 </div>
             </div>
 
@@ -126,10 +148,15 @@
         <div class="bg-black/40 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
             <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
             
-            <div class="relative w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                <div class="absolute inset-0 rounded-full border-2 border-dashed border-amber-400 animate-spin-slow shadow-[0_0_15px_rgba(212,175,55,0.6)]"></div>
-                <div class="w-16 h-16 rounded-full overflow-hidden border border-amber-300 bg-neutral-950 relative z-10 shadow-lg">
-                    <img src="vuongmieng.png" alt="Vuong Mieng Logo" class="w-full h-full object-cover">
+            <div class="relative w-24 h-24 mx-auto mb-4 flex items-center justify-center mt-6">
+                <div class="absolute -top-8 z-30 w-16 h-16 flex items-center justify-center animate-crown-3d drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+                    <img src="crown.png" alt="Crown 3D" class="w-full h-full object-contain">
+                </div>
+                <div class="w-13 h-13 rounded-full overflow-hidden bg-neutral-950 relative z-10 flex items-center justify-center shadow-inner">
+                    <img src="vuongmieng.png" alt="Avatar" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute inset-0 z-20 w-full h-full flex items-center justify-center pointer-events-none">
+                    <img src="khungavt.png" alt="Avatar Frame" class="w-22 h-22 object-contain drop-shadow-[0_0_12px_rgba(0,0,0,0.9)]">
                 </div>
             </div>
 
@@ -144,10 +171,15 @@
         <div class="bg-black/40 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
             <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
             
-            <div class="relative w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                <div class="absolute inset-0 rounded-full border-2 border-dashed border-amber-400 animate-spin-slow shadow-[0_0_15px_rgba(212,175,55,0.6)]"></div>
-                <div class="w-16 h-16 rounded-full overflow-hidden border border-amber-300 bg-neutral-950 relative z-10 shadow-lg">
-                    <img src="vuongmieng.png" alt="Vuong Mieng Logo" class="w-full h-full object-cover">
+            <div class="relative w-24 h-24 mx-auto mb-4 flex items-center justify-center mt-6">
+                <div class="absolute -top-8 z-30 w-16 h-16 flex items-center justify-center animate-crown-3d drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+                    <img src="crown.png" alt="Crown 3D" class="w-full h-full object-contain">
+                </div>
+                <div class="w-13 h-13 rounded-full overflow-hidden bg-neutral-950 relative z-10 flex items-center justify-center shadow-inner">
+                    <img src="vuongmieng.png" alt="Avatar" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute inset-0 z-20 w-full h-full flex items-center justify-center pointer-events-none">
+                    <img src="khungavt.png" alt="Avatar Frame" class="w-22 h-22 object-contain drop-shadow-[0_0_12px_rgba(0,0,0,0.9)]">
                 </div>
             </div>
 
