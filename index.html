@@ -1,110 +1,173 @@
 <!DOCTYPE html>
-<html lang="vi" class="dark">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Dark & Gold - Discord Bot Hub</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Becus Royal Bot Hub</title>
+    <!-- Import Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Import Google Fonts hoàng gia -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        .scrollbar-none::-webkit-scrollbar {
-            display: none;
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, rgba(8, 8, 12, 0.7), rgba(18, 15, 8, 0.8)), url('laudainhavua.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
-        .scrollbar-none {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+        .royal-title {
+            font-family: 'Cinzel', serif;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #fce99f 0%, #d4af37 50%, #996515 100%);
+        }
+        .gold-border {
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+        .gold-glow:hover {
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.25), inset 0 0 15px rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.9);
+        }
+        .royal-line {
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
+            height: 1px;
         }
     </style>
 </head>
-<body class="bg-neutral-950 text-neutral-100 min-h-screen relative overflow-x-hidden font-sans" style="background-image: url('laudainhavua.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+<body class="min-h-screen text-slate-100 flex flex-col items-center justify-center p-6 md:p-12">
 
-    <!-- Lớp phủ tối màu mờ ảo cho nền sang trọng -->
-    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm pointer-events-none z-0"></div>
-
-    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-8">
+    <!-- Header Hoàng Gia Trang Trí -->
+    <header class="text-center z-10 mb-10 max-w-3xl w-full">
+        <div class="inline-block bg-black/40 gold-border text-amber-300 text-xs font-semibold tracking-[0.3em] px-5 py-2 rounded-full mb-5 backdrop-blur-md uppercase shadow-lg">
+            Lệnh War Cần Key Admin
+        </div>
         
-        <!-- HEADER -->
-        <header class="text-center mb-8">
-            <div class="inline-block px-6 py-2 rounded-full border border-amber-500/40 bg-black/40 backdrop-blur-md text-amber-400 text-xs sm:text-sm tracking-widest uppercase mb-4 shadow-lg">
-                Lệnh War Cần Key Admin
-            </div>
-            <h1 class="text-3xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-600 drop-shadow-md mb-2">
-                DANH SÁCH BOT DISCORD
-            </h1>
-            <p class="text-amber-200/70 text-sm sm:text-base tracking-wider uppercase">
-                Càng nhiều bot càng mạnh
-            </p>
-        </header>
+        <div class="royal-line w-3/4 mx-auto mb-4"></div>
+        
+        <h1 class="royal-title text-3xl md:text-5xl font-black text-white tracking-wide mb-3 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
+            Danh Sách Bot Discord
+        </h1>
+        
+        <div class="royal-line w-3/4 mx-auto mt-4 mb-3"></div>
 
-        <!-- KHUNG CHỨA DANH SÁCH BOT (VUỐT NGANG) -->
-        <div class="w-full max-w-6xl">
-            <div class="flex overflow-x-auto snap-x snap-mandatory space-x-6 px-4 py-6 scrollbar-none">
+        <p class="text-amber-200/90 text-sm md:text-base font-bold tracking-[0.25em] uppercase drop-shadow">
+            Càng Nhiều Bot Càng Mạnh
+        </p>
+    </header>
+
+    <!-- Danh sách Card Bot -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl w-full z-10">
+        
+        <!-- Bot 1 -->
+        <div class="bg-black/25 backdrop-blur-2xl gold-border rounded-3xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-visible group">
+            <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
+            
+            <!-- Khu vực Avatar, Khung vòng gai & Vương miện đứng yên -->
+            <div class="relative w-32 h-32 mx-auto mb-4 flex items-center justify-center mt-6">
+                <!-- 1. Vương miện crown.png ở trên đầu (Đứng yên, không xoay) -->
+                <div class="absolute -top-7 z-30 flex items-center justify-center pointer-events-none">
+                    <img src="crown.png" alt="Crown" class="w-16 h-16 object-contain drop-shadow-[0_6px_8px_rgba(0,0,0,0.9)]">
+                </div>
                 
-                <!-- BOT CARD 1 -->
-                <div class="flex-shrink-0 w-80 sm:w-96 snap-center bg-neutral-950/30 backdrop-blur-xl border border-amber-500/40 rounded-3xl p-6 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] flex flex-col items-center relative group hover:border-amber-500/80 transition-all duration-300">
-                    
-                    <!-- Crown đứng yên phía trên card -->
-                    <div class="absolute -top-7 z-30">
-                        <img src="crown.png" alt="Crown" class="w-20 h-20 object-contain drop-shadow-[0_8px_8px_rgba(0,0,0,0.9)]">
-                    </div>
-
-                    <!-- Khung Avatar chuẩn kích thước -->
-                    <div class="relative w-32 h-32 mt-6 mb-4 flex items-center justify-center">
-                        <!-- Ảnh Avatar bên trong -->
-                        <div class="w-24 h-24 rounded-full overflow-hidden relative z-10 flex items-center justify-center shadow-inner">
-                            <img src="vuongmieng.png" alt="Avatar" class="w-full h-full object-cover">
-                        </div>
-                        <!-- Khung vòng gai bọc ngoài (Đã scale vừa khít) -->
-                        <img src="khungavt.png" alt="Frame" class="absolute inset-0 w-full h-full object-contain z-20 pointer-events-none scale-125">
-                    </div>
-
-                    <!-- Tên Bot & Thông tin -->
-                    <h2 class="text-xl font-bold text-amber-300 tracking-wide mt-4">BOT WAR 1</h2>
-                    <p class="text-neutral-400 text-xs sm:text-sm mt-1 mb-6 font-mono">/menu | bot by becus</p>
-
-                    <!-- Nút Thêm Bot -->
-                    <a href="#" class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-neutral-950 font-bold tracking-wider text-center uppercase shadow-lg hover:brightness-110 active:scale-95 transition-all">
-                        Thêm Bot
-                    </a>
+                <!-- 2. Avatar bên trong (vuongmieng.png) -->
+                <div class="w-24 h-24 rounded-full overflow-hidden bg-neutral-950 relative z-10 flex items-center justify-center shadow-inner border border-amber-500/20">
+                    <img src="vuongmieng.png" alt="Avatar" class="w-full h-full object-cover">
                 </div>
 
-                <!-- BOT CARD 2 -->
-                <div class="flex-shrink-0 w-80 sm:w-96 snap-center bg-neutral-950/30 backdrop-blur-xl border border-amber-500/40 rounded-3xl p-6 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] flex flex-col items-center relative group hover:border-amber-500/80 transition-all duration-300">
-                    <div class="absolute -top-7 z-30">
-                        <img src="crown.png" alt="Crown" class="w-20 h-20 object-contain drop-shadow-[0_8px_8px_rgba(0,0,0,0.9)]">
-                    </div>
-                    <div class="relative w-32 h-32 mt-6 mb-4 flex items-center justify-center">
-                        <div class="w-24 h-24 rounded-full overflow-hidden relative z-10 flex items-center justify-center shadow-inner">
-                            <img src="vuongmieng.png" alt="Avatar" class="w-full h-full object-cover">
-                        </div>
-                        <img src="khungavt.png" alt="Frame" class="absolute inset-0 w-full h-full object-contain z-20 pointer-events-none scale-125">
-                    </div>
-                    <h2 class="text-xl font-bold text-amber-300 tracking-wide mt-4">BOT WAR 2</h2>
-                    <p class="text-neutral-400 text-xs sm:text-sm mt-1 mb-6 font-mono">/help | bot by becus</p>
-                    <a href="#" class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-neutral-950 font-bold tracking-wider text-center uppercase shadow-lg hover:brightness-110 active:scale-95 transition-all">
-                        Thêm Bot
-                    </a>
-                </div>
-
-                <!-- BOT CARD 3 -->
-                <div class="flex-shrink-0 w-80 sm:w-96 snap-center bg-neutral-950/30 backdrop-blur-xl border border-amber-500/40 rounded-3xl p-6 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] flex flex-col items-center relative group hover:border-amber-500/80 transition-all duration-300">
-                    <div class="absolute -top-7 z-30">
-                        <img src="crown.png" alt="Crown" class="w-20 h-20 object-contain drop-shadow-[0_8px_8px_rgba(0,0,0,0.9)]">
-                    </div>
-                    <div class="relative w-32 h-32 mt-6 mb-4 flex items-center justify-center">
-                        <div class="w-24 h-24 rounded-full overflow-hidden relative z-10 flex items-center justify-center shadow-inner">
-                            <img src="vuongmieng.png" alt="Avatar" class="w-full h-full object-cover">
-                        </div>
-                        <img src="khungavt.png" alt="Frame" class="absolute inset-0 w-full h-full object-contain z-20 pointer-events-none scale-125">
-                    </div>
-                    <h2 class="text-xl font-bold text-amber-300 tracking-wide mt-4">BOT WAR 3</h2>
-                    <p class="text-neutral-400 text-xs sm:text-sm mt-1 mb-6 font-mono">/config | bot by becus</p>
-                    <a href="#" class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-neutral-950 font-bold tracking-wider text-center uppercase shadow-lg hover:brightness-110 active:scale-95 transition-all">
-                        Thêm Bot
-                    </a>
-                </div>
-
+                <!-- 3. Khung vòng gai đứng yên (khungavt.png) trùm ra ngoài -->
+                <img src="khungavt.png" alt="Avatar Frame" class="absolute inset-0 w-full h-full object-contain z-20 pointer-events-none scale-125 drop-shadow-[0_0_12px_rgba(0,0,0,0.9)]">
             </div>
+
+            <h2 class="royal-title text-xl font-bold text-amber-300 mb-1 tracking-wider mt-4">BOT WAR 1</h2>
+            <p class="text-xs text-slate-300 font-mono mb-6 tracking-wide drop-shadow bg-black/40 py-1 px-3 rounded-lg border border-neutral-800 inline-block">/menu | bot by becus</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=1543488614770417795&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-extrabold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-100 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
+                Thêm Bot
+            </a>
+        </div>
+
+        <!-- Bot 2 -->
+        <div class="bg-black/25 backdrop-blur-2xl gold-border rounded-3xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-visible group">
+            <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
+            
+            <div class="relative w-32 h-32 mx-auto mb-4 flex items-center justify-center mt-6">
+                <div class="absolute -top-7 z-30 flex items-center justify-center pointer-events-none">
+                    <img src="crown.png" alt="Crown" class="w-16 h-16 object-contain drop-shadow-[0_6px_8px_rgba(0,0,0,0.9)]">
+                </div>
+                <div class="w-24 h-24 rounded-full overflow-hidden bg-neutral-950 relative z-10 flex items-center justify-center shadow-inner border border-amber-500/20">
+                    <img src="vuongmieng.png" alt="Avatar" class="w-full h-full object-cover">
+                </div>
+                <img src="khungavt.png" alt="Avatar Frame" class="absolute inset-0 w-full h-full object-contain z-20 pointer-events-none scale-125 drop-shadow-[0_0_12px_rgba(0,0,0,0.9)]">
+            </div>
+
+            <h2 class="royal-title text-xl font-bold text-amber-300 mb-1 tracking-wider mt-4">BOT WAR 2</h2>
+            <p class="text-xs text-slate-300 font-mono mb-6 tracking-wide drop-shadow bg-black/40 py-1 px-3 rounded-lg border border-neutral-800 inline-block">/menu | bot by becus</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=1545149071784677376&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-extrabold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-100 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
+                Thêm Bot
+            </a>
+        </div>
+
+        <!-- Bot 3 -->
+        <div class="bg-black/25 backdrop-blur-2xl gold-border rounded-3xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-visible group">
+            <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
+            
+            <div class="relative w-32 h-32 mx-auto mb-4 flex items-center justify-center mt-6">
+                <div class="absolute -top-7 z-30 flex items-center justify-center pointer-events-none">
+                    <img src="crown.png" alt="Crown" class="w-16 h-16 object-contain drop-shadow-[0_6px_8px_rgba(0,0,0,0.9)]">
+                </div>
+                <div class="w-24 h-24 rounded-full overflow-hidden bg-neutral-950 relative z-10 flex items-center justify-center shadow-inner border border-amber-500/20">
+                    <img src="vuongmieng.png" alt="Avatar" class="w-full h-full object-cover">
+                </div>
+                <img src="khungavt.png" alt="Avatar Frame" class="absolute inset-0 w-full h-full object-contain z-20 pointer-events-none scale-125 drop-shadow-[0_0_12px_rgba(0,0,0,0.9)]">
+            </div>
+
+            <h2 class="royal-title text-xl font-bold text-amber-300 mb-1 tracking-wider mt-4">BOT WAR 3</h2>
+            <p class="text-xs text-slate-300 font-mono mb-6 tracking-wide drop-shadow bg-black/40 py-1 px-3 rounded-lg border border-neutral-800 inline-block">/menu | bot by becus</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=1548293042660704337&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-extrabold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-100 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
+                Thêm Bot
+            </a>
+        </div>
+
+        <!-- Bot 4 -->
+        <div class="bg-black/25 backdrop-blur-2xl gold-border rounded-3xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-visible group">
+            <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
+            
+            <div class="relative w-32 h-32 mx-auto mb-4 flex items-center justify-center mt-6">
+                <div class="absolute -top-7 z-30 flex items-center justify-center pointer-events-none">
+                    <img src="crown.png" alt="Crown" class="w-16 h-16 object-contain drop-shadow-[0_6px_8px_rgba(0,0,0,0.9)]">
+                </div>
+                <div class="w-24 h-24 rounded-full overflow-hidden bg-neutral-950 relative z-10 flex items-center justify-center shadow-inner border border-amber-500/20">
+                    <img src="vuongmieng.png" alt="Avatar" class="w-full h-full object-cover">
+                </div>
+                <img src="khungavt.png" alt="Avatar Frame" class="absolute inset-0 w-full h-full object-contain z-20 pointer-events-none scale-125 drop-shadow-[0_0_12px_rgba(0,0,0,0.9)]">
+            </div>
+
+            <h2 class="royal-title text-xl font-bold text-amber-300 mb-1 tracking-wider mt-4">BOT WAR 4</h2>
+            <p class="text-xs text-slate-300 font-mono mb-6 tracking-wide drop-shadow bg-black/40 py-1 px-3 rounded-lg border border-neutral-800 inline-block">/menu | bot by becus</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=1549654313520074802&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-extrabold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-100 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
+                Thêm Bot
+            </a>
+        </div>
+
+        <!-- Bot 5 -->
+        <div class="bg-black/25 backdrop-blur-2xl gold-border rounded-3xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-visible group">
+            <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
+            
+            <div class="relative w-32 h-32 mx-auto mb-4 flex items-center justify-center mt-6">
+                <div class="absolute -top-7 z-30 flex items-center justify-center pointer-events-none">
+                    <img src="crown.png" alt="Crown" class="w-16 h-16 object-contain drop-shadow-[0_6px_8px_rgba(0,0,0,0.9)]">
+                </div>
+                <div class="w-24 h-24 rounded-full overflow-hidden bg-neutral-950 relative z-10 flex items-center justify-center shadow-inner border border-amber-500/20">
+                    <img src="vuongmieng.png" alt="Avatar" class="w-full h-full object-cover">
+                </div>
+                <img src="khungavt.png" alt="Avatar Frame" class="absolute inset-0 w-full h-full object-contain z-20 pointer-events-none scale-125 drop-shadow-[0_0_12px_rgba(0,0,0,0.9)]">
+            </div>
+
+            <h2 class="royal-title text-xl font-bold text-amber-300 mb-1 tracking-wider mt-4">BOT WAR 5</h2>
+            <p class="text-xs text-slate-300 font-mono mb-6 tracking-wide drop-shadow bg-black/40 py-1 px-3 rounded-lg border border-neutral-800 inline-block">/menu | bot by becus</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=1549654626838777929&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-extrabold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-100 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
+                Thêm Bot
+            </a>
         </div>
 
     </div>
