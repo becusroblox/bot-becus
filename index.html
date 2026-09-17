@@ -23,15 +23,21 @@
             background: linear-gradient(135deg, #fce99f 0%, #d4af37 50%, #996515 100%);
         }
         .gold-border {
-            border: 1px solid rgba(212, 175, 55, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.5);
         }
         .gold-glow:hover {
-            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.25), inset 0 0 15px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3), inset 0 0 15px rgba(212, 175, 55, 0.2);
             border-color: rgba(212, 175, 55, 0.9);
         }
         .royal-line {
             background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
             height: 1px;
+        }
+        /* Style cho card hình nền card.jpg */
+        .royal-card {
+            background: linear-gradient(135deg, rgba(10, 10, 15, 0.75), rgba(20, 15, 8, 0.85)), url('card.jpg');
+            background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
@@ -60,22 +66,16 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl w-full z-10">
         
         <!-- Bot 1 -->
-        <div class="bg-black/25 backdrop-blur-2xl gold-border rounded-3xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-visible group">
+        <div class="royal-card backdrop-blur-xl gold-border rounded-3xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-visible group">
             <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
             
-            <!-- Khu vực Avatar, Khung vòng gai & Vương miện đứng yên -->
             <div class="relative w-32 h-32 mx-auto mb-4 flex items-center justify-center mt-6">
-                <!-- 1. Vương miện crown.png ở trên đầu (Đứng yên, không xoay) -->
                 <div class="absolute -top-7 z-30 flex items-center justify-center pointer-events-none">
                     <img src="crown.png" alt="Crown" class="w-16 h-16 object-contain drop-shadow-[0_6px_8px_rgba(0,0,0,0.9)]">
                 </div>
-                
-                <!-- 2. Avatar bên trong (vuongmieng.png) -->
                 <div class="w-24 h-24 rounded-full overflow-hidden bg-neutral-950 relative z-10 flex items-center justify-center shadow-inner border border-amber-500/20">
                     <img src="vuongmieng.png" alt="Avatar" class="w-full h-full object-cover">
                 </div>
-
-                <!-- 3. Khung vòng gai đứng yên (khungavt.png) trùm ra ngoài -->
                 <img src="khungavt.png" alt="Avatar Frame" class="absolute inset-0 w-full h-full object-contain z-20 pointer-events-none scale-125 drop-shadow-[0_0_12px_rgba(0,0,0,0.9)]">
             </div>
 
@@ -87,7 +87,7 @@
         </div>
 
         <!-- Bot 2 -->
-        <div class="bg-black/25 backdrop-blur-2xl gold-border rounded-3xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-visible group">
+        <div class="royal-card backdrop-blur-xl gold-border rounded-3xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-visible group">
             <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
             
             <div class="relative w-32 h-32 mx-auto mb-4 flex items-center justify-center mt-6">
@@ -108,7 +108,7 @@
         </div>
 
         <!-- Bot 3 -->
-        <div class="bg-black/25 backdrop-blur-2xl gold-border rounded-3xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-visible group">
+        <div class="royal-card backdrop-blur-xl gold-border rounded-3xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-visible group">
             <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
             
             <div class="relative w-32 h-32 mx-auto mb-4 flex items-center justify-center mt-6">
@@ -129,7 +129,7 @@
         </div>
 
         <!-- Bot 4 -->
-        <div class="bg-black/25 backdrop-blur-2xl gold-border rounded-3xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-visible group">
+        <div class="royal-card backdrop-blur-xl gold-border rounded-3xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-visible group">
             <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
             
             <div class="relative w-32 h-32 mx-auto mb-4 flex items-center justify-center mt-6">
@@ -150,7 +150,7 @@
         </div>
 
         <!-- Bot 5 -->
-        <div class="bg-black/25 backdrop-blur-2xl gold-border rounded-3xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-visible group">
+        <div class="royal-card backdrop-blur-xl gold-border rounded-3xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-visible group">
             <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
             
             <div class="relative w-32 h-32 mx-auto mb-4 flex items-center justify-center mt-6">
@@ -173,5 +173,4 @@
     </div>
 
 </body>
-    </html>
-    
+</html>
