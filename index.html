@@ -3,209 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Becus War Bot Hub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Becus Royal Bot Hub</title>
+    <!-- Import Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Import Google Fonts hoàng gia (Cinzel & Plus Jakarta Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            /* Làm lớp phủ tối mỏng đi để nhìn rõ ảnh nền laudainhavua.jpg */
-            background: linear-gradient(rgba(8, 9, 12, 0.35), rgba(8, 9, 12, 0.55)), url('laudainhavua.jpg');
+            background: linear-gradient(135deg, rgba(10, 10, 15, 0.75), rgba(20, 18, 12, 0.85)), url('laudainhavua.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: #f1f5f9;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding: 40px 20px;
         }
-        header {
-            text-align: center;
-            margin-bottom: 35px;
-            z-index: 2;
+        .royal-title {
+            font-family: 'Cinzel', serif;
         }
-        .war-status {
-            display: inline-block;
-            background: rgba(40, 42, 48, 0.7);
-            border: 1px solid rgba(120, 125, 135, 0.4);
-            color: #b0b5bc;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 6px 16px;
-            border-radius: 20px;
-            margin-bottom: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            backdrop-filter: blur(8px);
+        .gold-gradient {
+            background: linear-gradient(135deg, #f5d77f 0%, #d4af37 50%, #aa771c 100%);
         }
-        h1 {
-            color: #ffffff;
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        .gold-border {
+            border: 1px solid rgba(212, 175, 55, 0.35);
         }
-        .brand-tag {
-            color: #ffffff;
-            font-size: 0.95rem;
-            font-weight: 700;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-        }
-        .bot-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-            max-width: 1000px;
-            width: 100%;
-            z-index: 2;
-        }
-        .bot-card {
-            /* Card siêu trong suốt để nhìn xuyên thấu ảnh nền, viền trắng sáng */
-            background: rgba(15, 17, 22, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            padding: 30px 20px;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-        .bot-card:hover {
-            transform: translateY(-6px);
-            background: rgba(15, 17, 22, 0.35);
-            border-color: #ffffff;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 255, 255, 0.2);
-        }
-        .bot-avatar {
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
-            margin: 0 auto 18px auto;
-            border: 2px solid #ff0000;
-            background-color: #0b0c10;
-            overflow: hidden;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
-        }
-        .bot-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .bot-card h2 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: #ff0000;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
-        }
-        .bot-card p {
-            font-size: 0.85rem;
-            color: #cbd5e1;
-            margin-bottom: 20px;
-            font-family: monospace;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-        }
-        @keyframes energyFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .btn {
-            display: inline-block;
-            /* Trả lại màu hiệu ứng chạy đỏ rực */
-            background: linear-gradient(270deg, #ff0000, #990000, #ff3333, #660000);
-            background-size: 300% 300%;
-            animation: energyFlow 4s ease infinite;
-            color: white;
-            padding: 11px 0;
-            width: 100%;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            border: 1px solid #ff4d4d;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
-            transition: all 0.2s ease;
-        }
-        .btn:hover {
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
-            transform: scale(1.02);
-        }
-        .btn:active {
-            transform: scale(0.98);
+        .gold-glow:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+            border-color: rgba(212, 175, 55, 0.8);
         }
     </style>
 </head>
-<body>
+<body class="min-h-screen text-slate-100 flex flex-col items-center justify-between p-6 md:p-12">
 
-    <header>
-        <div class="war-status">LỆNH WAR CẦN KEY ADMIN</div>
-        <h1>Danh Sách Bot Discord</h1>
-        <div class="brand-tag">CÀNG NHIỀU BOT CÀNG MẠNH</div>
+    <!-- Header Hoàng Gia -->
+    <header class="text-center z-10 mb-8 max-w-2xl">
+        <div class="inline-block bg-black/40 gold-border text-amber-300 text-xs font-semibold tracking-[0.25em] px-4 py-1.5 rounded-full mb-4 backdrop-blur-md uppercase">
+            Lệnh War Cần Key Admin
+        </div>
+        <h1 class="royal-title text-3xl md:text-5xl font-black text-white tracking-wide mb-3 drop-shadow-[0_4px_15px_rgba(0,0,0,0.8)]">
+            Danh Sách Bot Discord
+        </h1>
+        <p class="text-amber-100/80 text-sm md:text-base font-medium tracking-[0.2em] uppercase drop-shadow">
+            Càng Nhiều Bot Càng Mạnh
+        </p>
     </header>
 
-    <div class="bot-container">
+    <!-- Danh sách Card Bot -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl w-full z-10 mb-10">
+        
         <!-- Bot 1 -->
-        <div class="bot-card">
-            <div class="bot-avatar">
-                <img src="becus.png" alt="Becus Logo">
+        <div class="bg-black/35 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
+            <div class="absolute -top-12 -right-12 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
+            <div class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-amber-400 overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.4)] bg-neutral-950">
+                <img src="becus.png" alt="Becus Logo" class="w-full h-full object-cover">
             </div>
-            <h2>BOT WAR 1</h2>
-            <p>/menu | bot by becus</p>
-            <a href="https://discord.com/oauth2/authorize?client_id=1543488614770417795&permissions=8&integration_type=0&scope=bot" class="btn" target="_blank">Thêm Bot</a>
+            <h2 class="royal-title text-xl font-bold text-amber-300 mb-1 tracking-wider">BOT WAR 1</h2>
+            <p class="text-xs text-slate-400 font-mono mb-6 tracking-wide">/menu | bot by becus</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=1543488614770417795&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-bold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
+                Thêm Bot
+            </a>
         </div>
 
         <!-- Bot 2 -->
-        <div class="bot-card">
-            <div class="bot-avatar">
-                <img src="becus.png" alt="Becus Logo">
+        <div class="bg-black/35 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
+            <div class="absolute -top-12 -right-12 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
+            <div class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-amber-400 overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.4)] bg-neutral-950">
+                <img src="becus.png" alt="Becus Logo" class="w-full h-full object-cover">
             </div>
-            <h2>BOT WAR 2</h2>
-            <p>/menu | bot by becus</p>
-            <a href="https://discord.com/oauth2/authorize?client_id=1545149071784677376&permissions=8&integration_type=0&scope=bot" class="btn" target="_blank">Thêm Bot</a>
+            <h2 class="royal-title text-xl font-bold text-amber-300 mb-1 tracking-wider">BOT WAR 2</h2>
+            <p class="text-xs text-slate-400 font-mono mb-6 tracking-wide">/menu | bot by becus</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=1545149071784677376&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-bold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
+                Thêm Bot
+            </a>
         </div>
 
         <!-- Bot 3 -->
-        <div class="bot-card">
-            <div class="bot-avatar">
-                <img src="becus.png" alt="Becus Logo">
+        <div class="bg-black/35 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
+            <div class="absolute -top-12 -right-12 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
+            <div class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-amber-400 overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.4)] bg-neutral-950">
+                <img src="becus.png" alt="Becus Logo" class="w-full h-full object-cover">
             </div>
-            <h2>BOT WAR 3</h2>
-            <p>/menu | bot by becus</p>
-            <a href="https://discord.com/oauth2/authorize?client_id=1548293042660704337&permissions=8&integration_type=0&scope=bot" class="btn" target="_blank">Thêm Bot</a>
+            <h2 class="royal-title text-xl font-bold text-amber-300 mb-1 tracking-wider">BOT WAR 3</h2>
+            <p class="text-xs text-slate-400 font-mono mb-6 tracking-wide">/menu | bot by becus</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=1548293042660704337&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-bold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
+                Thêm Bot
+            </a>
         </div>
 
         <!-- Bot 4 -->
-        <div class="bot-card">
-            <div class="bot-avatar">
-                <img src="becus.png" alt="Becus Logo">
+        <div class="bg-black/35 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
+            <div class="absolute -top-12 -right-12 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
+            <div class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-amber-400 overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.4)] bg-neutral-950">
+                <img src="becus.png" alt="Becus Logo" class="w-full h-full object-cover">
             </div>
-            <h2>BOT WAR 4</h2>
-            <p>/menu | bot by becus</p>
-            <a href="https://discord.com/oauth2/authorize?client_id=1549654313520074802&permissions=8&integration_type=0&scope=bot" class="btn" target="_blank">Thêm Bot</a>
+            <h2 class="royal-title text-xl font-bold text-amber-300 mb-1 tracking-wider">BOT WAR 4</h2>
+            <p class="text-xs text-slate-400 font-mono mb-6 tracking-wide">/menu | bot by becus</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=1549654313520074802&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-bold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
+                Thêm Bot
+            </a>
         </div>
 
         <!-- Bot 5 -->
-        <div class="bot-card">
-            <div class="bot-avatar">
-                <img src="becus.png" alt="Becus Logo">
+        <div class="bg-black/35 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
+            <div class="absolute -top-12 -right-12 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
+            <div class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-amber-400 overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.4)] bg-neutral-950">
+                <img src="becus.png" alt="Becus Logo" class="w-full h-full object-cover">
             </div>
-            <h2>BOT WAR 5</h2>
-            <p>/menu | bot by becus</p>
-            <a href="https://discord.com/oauth2/authorize?client_id=1549654626838777929&permissions=8&integration_type=0&scope=bot" class="btn" target="_blank">Thêm Bot</a>
+            <h2 class="royal-title text-xl font-bold text-amber-300 mb-1 tracking-wider">BOT WAR 5</h2>
+            <p class="text-xs text-slate-400 font-mono mb-6 tracking-wide">/menu | bot by becus</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=1549654626838777929&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-bold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
+                Thêm Bot
+            </a>
         </div>
+
     </div>
 
+    <!-- Footer -->
+    <footer class="text-xs text-amber-200/40 font-mono tracking-widest z-10 mt-4">
+        BECUS EMPIRE © 2026
+    </footer>
+
 </body>
-</html>
+    </html>
+    
