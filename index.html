@@ -6,12 +6,12 @@
     <title>Becus Royal Bot Hub</title>
     <!-- Import Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Import Google Fonts hoàng gia (Cinzel & Plus Jakarta Sans) -->
+    <!-- Import Google Fonts hoàng gia -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(135deg, rgba(10, 10, 15, 0.75), rgba(20, 18, 12, 0.85)), url('laudainhavua.jpg');
+            background: linear-gradient(135deg, rgba(8, 8, 12, 0.8), rgba(18, 15, 8, 0.9)), url('laudainhavua.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -20,96 +20,107 @@
             font-family: 'Cinzel', serif;
         }
         .gold-gradient {
-            background: linear-gradient(135deg, #f5d77f 0%, #d4af37 50%, #aa771c 100%);
+            background: linear-gradient(135deg, #fce99f 0%, #d4af37 50%, #996515 100%);
         }
         .gold-border {
-            border: 1px solid rgba(212, 175, 55, 0.35);
+            border: 1px solid rgba(212, 175, 55, 0.4);
         }
         .gold-glow:hover {
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
-            border-color: rgba(212, 175, 55, 0.8);
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.25), inset 0 0 15px rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.9);
+        }
+        /* Hiệu ứng đường kẻ hoàng gia */
+        .royal-line {
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
+            height: 1px;
         }
     </style>
 </head>
 <body class="min-h-screen text-slate-100 flex flex-col items-center justify-between p-6 md:p-12">
 
-    <!-- Header Hoàng Gia -->
-    <header class="text-center z-10 mb-8 max-w-2xl">
-        <div class="inline-block bg-black/40 gold-border text-amber-300 text-xs font-semibold tracking-[0.25em] px-4 py-1.5 rounded-full mb-4 backdrop-blur-md uppercase">
-            Lệnh War Cần Key Admin
+    <!-- Header Hoàng Gia Trang Trí -->
+    <header class="text-center z-10 mb-10 max-w-3xl w-full">
+        <div class="inline-block bg-black/50 gold-border text-amber-300 text-xs font-semibold tracking-[0.3em] px-5 py-2 rounded-full mb-5 backdrop-blur-md uppercase shadow-lg">
+            ⚡ Lệnh War Cần Key Admin ⚡
         </div>
-        <h1 class="royal-title text-3xl md:text-5xl font-black text-white tracking-wide mb-3 drop-shadow-[0_4px_15px_rgba(0,0,0,0.8)]">
+        
+        <div class="royal-line w-3/4 mx-auto mb-4"></div>
+        
+        <h1 class="royal-title text-3xl md:text-5xl font-black text-white tracking-wide mb-3 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
             Danh Sách Bot Discord
         </h1>
-        <p class="text-amber-100/80 text-sm md:text-base font-medium tracking-[0.2em] uppercase drop-shadow">
+        
+        <div class="royal-line w-3/4 mx-auto mt-4 mb-3"></div>
+
+        <p class="text-amber-200/90 text-sm md:text-base font-bold tracking-[0.25em] uppercase drop-shadow">
             Càng Nhiều Bot Càng Mạnh
         </p>
     </header>
 
-    <!-- Danh sách Card Bot -->
+    <!-- Danh sách Card Bot (Đã thay avt thành vuongmieng.png và thêm hiệu ứng) -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl w-full z-10 mb-10">
         
         <!-- Bot 1 -->
-        <div class="bg-black/35 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
-            <div class="absolute -top-12 -right-12 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
-            <div class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-amber-400 overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.4)] bg-neutral-950">
-                <img src="becus.png" alt="Becus Logo" class="w-full h-full object-cover">
+        <div class="bg-black/40 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
+            <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
+            <div class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-amber-400 overflow-hidden shadow-[0_0_20px_rgba(212,175,55,0.5)] bg-neutral-950 relative z-10">
+                <img src="vuongmieng.png" alt="Vuong Mieng Logo" class="w-full h-full object-cover">
             </div>
             <h2 class="royal-title text-xl font-bold text-amber-300 mb-1 tracking-wider">BOT WAR 1</h2>
-            <p class="text-xs text-slate-400 font-mono mb-6 tracking-wide">/menu | bot by becus</p>
-            <a href="https://discord.com/oauth2/authorize?client_id=1543488614770417795&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-bold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
+            <p class="text-xs text-slate-300 font-mono mb-6 tracking-wide drop-shadow">/menu | bot by becus</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=1543488614770417795&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-extrabold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-100 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
                 Thêm Bot
             </a>
         </div>
 
         <!-- Bot 2 -->
-        <div class="bg-black/35 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
-            <div class="absolute -top-12 -right-12 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
-            <div class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-amber-400 overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.4)] bg-neutral-950">
-                <img src="becus.png" alt="Becus Logo" class="w-full h-full object-cover">
+        <div class="bg-black/40 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
+            <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
+            <div class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-amber-400 overflow-hidden shadow-[0_0_20px_rgba(212,175,55,0.5)] bg-neutral-950 relative z-10">
+                <img src="vuongmieng.png" alt="Vuong Mieng Logo" class="w-full h-full object-cover">
             </div>
             <h2 class="royal-title text-xl font-bold text-amber-300 mb-1 tracking-wider">BOT WAR 2</h2>
-            <p class="text-xs text-slate-400 font-mono mb-6 tracking-wide">/menu | bot by becus</p>
-            <a href="https://discord.com/oauth2/authorize?client_id=1545149071784677376&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-bold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
+            <p class="text-xs text-slate-300 font-mono mb-6 tracking-wide drop-shadow">/menu | bot by becus</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=1545149071784677376&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-extrabold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-100 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
                 Thêm Bot
             </a>
         </div>
 
         <!-- Bot 3 -->
-        <div class="bg-black/35 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
-            <div class="absolute -top-12 -right-12 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
-            <div class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-amber-400 overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.4)] bg-neutral-950">
-                <img src="becus.png" alt="Becus Logo" class="w-full h-full object-cover">
+        <div class="bg-black/40 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
+            <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
+            <div class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-amber-400 overflow-hidden shadow-[0_0_20px_rgba(212,175,55,0.5)] bg-neutral-950 relative z-10">
+                <img src="vuongmieng.png" alt="Vuong Mieng Logo" class="w-full h-full object-cover">
             </div>
             <h2 class="royal-title text-xl font-bold text-amber-300 mb-1 tracking-wider">BOT WAR 3</h2>
-            <p class="text-xs text-slate-400 font-mono mb-6 tracking-wide">/menu | bot by becus</p>
-            <a href="https://discord.com/oauth2/authorize?client_id=1548293042660704337&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-bold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
+            <p class="text-xs text-slate-300 font-mono mb-6 tracking-wide drop-shadow">/menu | bot by becus</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=1548293042660704337&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-extrabold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-100 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
                 Thêm Bot
             </a>
         </div>
 
         <!-- Bot 4 -->
-        <div class="bg-black/35 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
-            <div class="absolute -top-12 -right-12 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
-            <div class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-amber-400 overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.4)] bg-neutral-950">
-                <img src="becus.png" alt="Becus Logo" class="w-full h-full object-cover">
+        <div class="bg-black/40 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
+            <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
+            <div class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-amber-400 overflow-hidden shadow-[0_0_20px_rgba(212,175,55,0.5)] bg-neutral-950 relative z-10">
+                <img src="vuongmieng.png" alt="Vuong Mieng Logo" class="w-full h-full object-cover">
             </div>
             <h2 class="royal-title text-xl font-bold text-amber-300 mb-1 tracking-wider">BOT WAR 4</h2>
-            <p class="text-xs text-slate-400 font-mono mb-6 tracking-wide">/menu | bot by becus</p>
-            <a href="https://discord.com/oauth2/authorize?client_id=1549654313520074802&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-bold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
+            <p class="text-xs text-slate-300 font-mono mb-6 tracking-wide drop-shadow">/menu | bot by becus</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=1549654313520074802&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-extrabold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-100 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
                 Thêm Bot
             </a>
         </div>
 
         <!-- Bot 5 -->
-        <div class="bg-black/35 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
-            <div class="absolute -top-12 -right-12 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
-            <div class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-amber-400 overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.4)] bg-neutral-950">
-                <img src="becus.png" alt="Becus Logo" class="w-full h-full object-cover">
+        <div class="bg-black/40 backdrop-blur-xl gold-border rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 gold-glow shadow-2xl relative overflow-hidden group">
+            <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-all"></div>
+            <div class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-amber-400 overflow-hidden shadow-[0_0_20px_rgba(212,175,55,0.5)] bg-neutral-950 relative z-10">
+                <img src="vuongmieng.png" alt="Vuong Mieng Logo" class="w-full h-full object-cover">
             </div>
             <h2 class="royal-title text-xl font-bold text-amber-300 mb-1 tracking-wider">BOT WAR 5</h2>
-            <p class="text-xs text-slate-400 font-mono mb-6 tracking-wide">/menu | bot by becus</p>
-            <a href="https://discord.com/oauth2/authorize?client_id=1549654626838777929&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-bold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
+            <p class="text-xs text-slate-300 font-mono mb-6 tracking-wide drop-shadow">/menu | bot by becus</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=1549654626838777929&permissions=8&integration_type=0&scope=bot" target="_blank" class="block w-full gold-gradient text-neutral-950 font-extrabold py-3 rounded-xl shadow-[0_4px_20px_rgba(212,175,55,0.4)] hover:opacity-100 hover:scale-[1.02] active:scale-[0.98] transition-all tracking-wider uppercase text-sm">
                 Thêm Bot
             </a>
         </div>
@@ -117,10 +128,10 @@
     </div>
 
     <!-- Footer -->
-    <footer class="text-xs text-amber-200/40 font-mono tracking-widest z-10 mt-4">
+    <footer class="text-xs text-amber-200/50 font-mono tracking-[0.3em] z-10 mt-4 uppercase">
         BECUS EMPIRE © 2026
     </footer>
 
 </body>
-    </html>
-    
+                </html>
+                
